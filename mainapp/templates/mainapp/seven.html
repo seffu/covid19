@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,7 +10,7 @@
     <title>Kapyenga project</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbar-static/">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.1/chart.min.js"></script>
 
     <!-- Bootstrap core CSS -->
@@ -47,53 +48,21 @@
     </div>
   </div>
 </nav>
-<br><br>
 
 <div class="container">
-  <h5 class="text-center text-muted">Data fetched from: <i><a href="https://rapidapi.com">https://rapidapi.com</a></i></h5>
-  <p class="text-center">This data was last updated at <i><span class="text-success">{{time}}</span></i></p><br>
-  <br><br>
-  <h3 class="text-left text-muted">Day: &nbsp;&nbsp;<span class="text-success">{{day}}</span></h3>
-  <h3 class="text-left text-muted">Country: &nbsp;&nbsp;<i class="fas fa-map-marker-alt text-primary"></i> <span class="text-primary">{{country}}</span></h3>
-  <h3 class="text-left text-muted">Current Population: &nbsp;&nbsp;<span class="text-info">{{population}}</span></h3>
-  <h3 class="text-left text-muted">Covid Tests: &nbsp;&nbsp;<span class="text-success">{{tests}}</span></h3>
-  <!-- <h3 class="text-left text-muted">{{country}}</h3>
-  <h3 class="text-left text-muted">{{country}}</h3> -->
-  <br><br>
-  <div class="row">
-    <div class="col-sm-4">
-      <div class="card">
-        <div class="card-body">
-          <h2 class="card-title text-warning text-center">{{active_cases}}</h2><br>
-          <p class="card-text text-muted text-center">Infected</p>
-        </div>
-      </div>
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+        <div class="col-4"></div>
     </div>
-    <div class="col-sm-4">
-      <div class="card">
-        <div class="card-body">
-          <h2 class="card-title text-danger text-center">{{new_deaths}}</h2><br>
-          <p class="card-text text-muted text-center">Deaths</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="card">
-        <div class="card-body">
-          <h2 class="card-title text-success text-center">{{recovered}}</h2><br>
-          <p class="card-text text-muted text-center">Recovered</p>
-        </div>
-      </div>
-    </div>
-  </div>  
 </div>
-
 
 
 <div class="container">
 <!-- <canvas id="myChart" width="400" height="400"></canvas> -->
 <p>
-   
+   {{country}}
+   {{population}}
     <!-- {{our_json_data}} -->
 </p>
 
