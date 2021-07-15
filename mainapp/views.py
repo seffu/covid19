@@ -2,7 +2,6 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from datetime import date, datetime
 import requests
-import calendar
 import json
 
 from datetime import date, timedelta
@@ -39,6 +38,8 @@ def home_view(request):
     total_deaths = our_json_data['response'][0]['deaths']['total']
     tests = our_json_data['response'][0]['tests']['total']
     day = our_json_data['response'][0]['day']
+    day_object = datetime.fromisoformat(day)
+    new_day_object = day_object.strftime("%d %b %Y")
     time = our_json_data['response'][0]['time']
     datetime_object = datetime.fromisoformat(time)
     new_datetime_object = datetime_object.strftime("%d-%b-%Y (%H:%M:%S.%f)")
@@ -53,7 +54,7 @@ def home_view(request):
         "new_deaths":new_deaths,
         "total_deaths":total_deaths,
         "tests":tests,
-        "day":day,
+        "day":new_day_object,
         "time":new_datetime_object
     }
     return render(request, 'mainapp/index.html', context)

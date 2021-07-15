@@ -1,3 +1,4 @@
+{% load humanize %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -55,13 +56,21 @@
   <br><br>
   <h3 class="text-left text-muted">Day: &nbsp;&nbsp;<span class="text-success">{{day}}</span></h3>
   <h3 class="text-left text-muted">Country: &nbsp;&nbsp;<i class="fas fa-map-marker-alt text-primary"></i> <span class="text-primary">{{country}}</span></h3>
-  <h3 class="text-left text-muted">Current Population: &nbsp;&nbsp;<span class="text-info">{{population}}</span></h3>
+  <h3 class="text-left text-muted">Current Population: &nbsp;&nbsp;<span class="text-info">{{population|intword}}</span></h3>
   <h3 class="text-left text-muted">Covid Tests: &nbsp;&nbsp;<span class="text-success">{{tests}}</span></h3>
   <!-- <h3 class="text-left text-muted">{{country}}</h3>
   <h3 class="text-left text-muted">{{country}}</h3> -->
   <br><br>
   <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-3">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-primary text-center">{{new_cases}}</h2><br>
+          <p class="card-text text-muted text-center">New cases</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
       <div class="card">
         <div class="card-body">
           <h2 class="card-title text-warning text-center">{{active_cases}}</h2><br>
@@ -69,7 +78,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-3">
       <div class="card">
         <div class="card-body">
           <h2 class="card-title text-danger text-center">{{new_deaths}}</h2><br>
@@ -77,7 +86,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-3">
       <div class="card">
         <div class="card-body">
           <h2 class="card-title text-success text-center">{{recovered}}</h2><br>
