@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'crispy_forms',
     'mainapp',
     'users',
-    'allauth.socialaccount'
+    'commentsapp',
+    'allauth.socialaccount',
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -164,3 +165,6 @@ LOGIN_REDIRECT_URL = 'mainapp:homepage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DISQUS_API_KEY = '4tcX5yP7ZgduX1tOHAZlH4BIJGtyFc8hSRvvbxhwzShLrznDJbwCwS9fI2ljI7zK'
+DISQUS_WEBSITE_SHORTNAME = ''
