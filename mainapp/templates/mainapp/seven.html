@@ -59,27 +59,30 @@
 </div>
 
 <div class="container">
-  <canvas id="myChart" width="80%" height="30%"></canvas>
+  <!-- <canvas id="myChart" width="80%" height="30%"></canvas> -->
+  <canvas id="line-chart" width="800" height="450"></canvas>
 </div>
 
-<script>
+<!-- <script>
   var myurl;
   $.getJSON("/history", function(data) {
   myurl = data;
   const new_cases = []
+  const dates = []
   for (var i=0; i < myurl.length; i++){
     new_cases.push(myurl[i]["new_cases"])
+    dates.push(myurl[i]["day"])
   }
   console.log(new_cases)
   var ctx = document.getElementById('myChart').getContext('2d');
   var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-      labels: ['Active', 'Deaths', 'Recovered'],
+      labels: [...dates],
       datasets: [{
         label: '# of Cases',
 
-        data: [12, 19, 3], // we will fetch the json data
+        data: [...new_cases], // we will fetch the json data
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -96,7 +99,7 @@
       }]
     },
     options: {
-      indexAxis: 'y',
+      //indexAxis: 'y',
       scales: {
         y: {
           beginAtZero: true
@@ -106,10 +109,41 @@
     }
   });
   });
+</script> -->
+
+
+<script>
+  var myurl;
+  $.getJSON("/history", function(data) {
+  myurl = data;
+  const new_cases = []
+  const dates = []
+  for (var i=0; i < myurl.length; i++){
+    new_cases.push(myurl[i]["new_cases"])
+    dates.push(myurl[i]["day"])
+  }
+  console.log(new_cases)
+  new Chart(document.getElementById("line-chart"), {
+    type: 'line',
+    data: {
+      labels: [...dates],
+      datasets: [{ 
+          data: [...],
+          label: "Africa",
+          borderColor: "#3e95cd",
+          fill: false
+        }, 
+      ]
+    },
+    options: {
+      title: {
+        display: true,
+        text: 'World population per region (in millions)'
+      }
+    }
+  }); 
+});
 </script>
-
-
-
 
 
 
